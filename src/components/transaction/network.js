@@ -9,8 +9,8 @@ router.get("/lastTransaction", async function (req, res) {
       blockQuantity,
       contractAddress,
       type,
-      walletAddres } = req.body;
-    result = await controller.findLastTransaction(blockQuantity,contractAddress,type,walletAddres);
+      walletAddress } = req.body;
+    result = await controller.findLastTransaction(blockQuantity,contractAddress,type,walletAddress);
     response.success(req, res, result, 200);
   } catch (error) {
     response.error(req, res, error.message, 400, "Controlled Error");
